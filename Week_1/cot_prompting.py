@@ -7,13 +7,13 @@ which dramatically improves accuracy on complex problems.
 """
 
 import os
-import anthropic
+from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
 
-client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
-MODEL = "claude-sonnet-4-6"
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+MODEL = "llama-3.3-70b-versatile"
 
 PUZZLE = """
 A train leaves City A at 8:00 AM traveling at 60 mph toward City B.
@@ -37,12 +37,12 @@ Step-by-step solution:"""
 
 
 def query(prompt: str, max_tokens: int = 1024) -> str:
-    response = client.messages.create(
+    response = client.chat.completions.create(
         model=MODEL,
+        messages=[{"role": "user", "content": prompt}],
         max_tokens=max_tokens,
-        messages=[{"role": "user", "content": prompt}]
     )
-    return response.content[0].text
+    return response.choices[0].message.content
 
 
 def divider(title: str):
@@ -56,12 +56,10 @@ if __name__ == "__main__":
     print("Puzzle:", PUZZLE)
 
     divider("ZERO-SHOT (no reasoning guidance)")
-    zero_shot_answer = query(ZERO_SHOT_PROMPT, max_tokens=256)
-    print(zero_shot_answer)
+    print(query(ZERO_SHOT_PROMPT, max_tokens=256))
 
     divider("CHAIN-OF-THOUGHT (step-by-step reasoning)")
-    cot_answer = query(COT_PROMPT, max_tokens=1024)
-    print(cot_answer)
+    print(query(COT_PROMPT, max_tokens=1024))
 
     divider("OBSERVATION")
     print("Zero-shot prompts the model to jump straight to an answer.")
