@@ -84,7 +84,21 @@ def run_agent(user_query: str) -> None:
 
         # ── The model wants to call one or more tools ──────────────────────────
         if finish == "tool_calls":
-            messages.append(msg)
+            messages.append({
+                "role": "assistant",
+                "content": msg.content,
+                "tool_calls": [
+                    {
+                        "id": tc.id,
+                        "type": "function",
+                        "function": {
+                            "name": tc.function.name,
+                            "arguments": tc.function.arguments,
+                        },
+                    }
+                    for tc in msg.tool_calls
+                ],
+            })
 
             for tc in msg.tool_calls:
                 name = tc.function.name
@@ -105,7 +119,7 @@ def run_agent(user_query: str) -> None:
 
         # ── The model has a final answer ───────────────────────────────────────
         else:
-            print(f"{PURPLE}Agent:{RESET} {msg.content}")
+            print(f"{PURPLE}Agent:{RESET} {msg.content or '(no response)'}")
             break
 
 
