@@ -16,6 +16,7 @@ Run modes:
 import os
 import sys
 import json
+import groq
 from groq import Groq
 from dotenv import load_dotenv
 from tools import TOOL_SCHEMAS, TOOL_DISPATCH
@@ -71,12 +72,16 @@ def run_agent(user_query: str) -> None:
     ]
 
     while True:
-        response = client.chat.completions.create(
-            model=MODEL,
-            messages=messages,
-            tools=TOOL_SCHEMAS,
-            tool_choice="auto",
-        )
+        try:
+            response = client.chat.completions.create(
+                model=MODEL,
+                messages=messages,
+                tools=TOOL_SCHEMAS,
+                tool_choice="auto",
+            )
+        except groq.APIStatusError as e:
+            print(f"{PURPLE}Agent:{RESET} Sorry, the model failed to generate a valid tool call ({e.body.get('error', {}).get('code', 'error') if isinstance(e.body, dict) else 'error'}). Please try rephrasing.")
+            break
 
         choice      = response.choices[0]
         msg         = choice.message
