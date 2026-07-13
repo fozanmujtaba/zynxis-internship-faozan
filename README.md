@@ -10,9 +10,9 @@
 
 | Week | Topic | Status |
 |------|-------|--------|
-| 1 | Prompt Engineering & ReAct | 🔄 In Progress |
-| 2 | Tool Use & Function Calling | ⏳ Upcoming |
-| 3 | Memory & State Management | ⏳ Upcoming |
+| 1 | Prompt Engineering & ReAct | ✅ Complete |
+| 2 | Tool Use & Function Calling | ✅ Complete |
+| 3 | Memory & State Management | 🔄 In Progress |
 | 4 | RAG for Agents | ⏳ Upcoming |
 | 5 | Multi-Agent Orchestration | ⏳ Upcoming |
 | 6 | Agentic Cybersecurity | ⏳ Upcoming |
