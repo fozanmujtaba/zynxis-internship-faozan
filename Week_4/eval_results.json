@@ -1,0 +1,168 @@
+{
+  "results": [
+    {
+      "question": "What vector database does the Week 3 personal assistant use for long-term memory, and what local directory does it persist to?",
+      "answer": "The Week 3 personal assistant uses ChromaDB as its vector database for long-term memory. It persists to a local directory named './chroma_store/' (source: [week3_tech_note.pdf p.1]).",
+      "sources_retrieved": [
+        "week3_architecture_diagram.pdf",
+        "week3_tech_note.pdf",
+        "week3_tech_note.pdf",
+        "week3_tech_note.pdf"
+      ],
+      "expect_source": "week3_tech_note.pdf",
+      "expect_keywords": [
+        "chromadb",
+        "chroma_store"
+      ],
+      "retrieval_correct": true,
+      "generation_correct": true
+    },
+    {
+      "question": "Why was ChromaDB chosen over Pinecone for the Week 3 project?",
+      "answer": "ChromaDB was chosen over Pinecone because it runs embedded, in-process, persisting to a local directory with zero external dependencies or cost, whereas Pinecone requires a hosted account, an API key, and network calls for every read/write. (Source: [week3_tech_note.pdf p.1])",
+      "sources_retrieved": [
+        "week3_tech_note.pdf",
+        "week3_tech_note.pdf",
+        "week3_architecture_diagram.pdf",
+        "week1_logic_flow_diagram.pdf"
+      ],
+      "expect_source": "week3_tech_note.pdf",
+      "expect_keywords": [
+        "api key"
+      ],
+      "retrieval_correct": true,
+      "generation_correct": true
+    },
+    {
+      "question": "How many turns does the Week 3 short-term memory buffer hold in the demo?",
+      "answer": "The Week 3 short-term memory buffer holds the last N turns, and in the demo, N is 3. (Source: [week3_tech_note.pdf p.1])",
+      "sources_retrieved": [
+        "week3_architecture_diagram.pdf",
+        "week3_tech_note.pdf",
+        "week3_tech_note.pdf",
+        "week3_tech_note.pdf"
+      ],
+      "expect_source": "week3_tech_note.pdf",
+      "expect_keywords": [
+        "3"
+      ],
+      "retrieval_correct": true,
+      "generation_correct": true
+    },
+    {
+      "question": "What extension does the Week 3 tech note suggest to stop stale facts from outliving their relevance?",
+      "answer": "The Week 3 tech note suggests adding an expiry to stop stale facts from outliving their relevance. [week3_tech_note.pdf p.2]",
+      "sources_retrieved": [
+        "week3_tech_note.pdf",
+        "week3_tech_note.pdf",
+        "week3_tech_note.pdf",
+        "week3_tech_note.pdf"
+      ],
+      "expect_source": "week3_tech_note.pdf",
+      "expect_keywords": [
+        "expiry"
+      ],
+      "retrieval_correct": true,
+      "generation_correct": true
+    },
+    {
+      "question": "In the Week 3 architecture diagram, which LLM model powers the personal assistant?",
+      "answer": "According to [week3_architecture_diagram.pdf p.1], the LLM model that powers the personal assistant is Groq LLM (llama-3.3-70b-versatile).",
+      "sources_retrieved": [
+        "week3_architecture_diagram.pdf",
+        "week3_tech_note.pdf",
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf"
+      ],
+      "expect_source": "week3_architecture_diagram.pdf",
+      "expect_keywords": [
+        "llama-3.3-70b"
+      ],
+      "retrieval_correct": true,
+      "generation_correct": true
+    },
+    {
+      "question": "In the Week 1 Zebra puzzle example, which animal does Bob own according to the final answer?",
+      "answer": "According to [week1_logic_flow_diagram.pdf p.1], the final answer is that Bob owns the Fish.",
+      "sources_retrieved": [
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf",
+        "week3_tech_note.pdf",
+        "week3_tech_note.pdf"
+      ],
+      "expect_source": "week1_logic_flow_diagram.pdf",
+      "expect_keywords": [
+        "fish"
+      ],
+      "retrieval_correct": true,
+      "generation_correct": true
+    },
+    {
+      "question": "What color house does Alice live in, per Clue 1 in the Week 1 logic flow diagram?",
+      "answer": "According to [week1_logic_flow_diagram.pdf p.1], per Clue 1, Alice lives in a Red house. This is stated in Step 2: \"Apply Clue 1 \u2192 Alice=Red\".",
+      "sources_retrieved": [
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf"
+      ],
+      "expect_source": "week1_logic_flow_diagram.pdf",
+      "expect_keywords": [
+        "red"
+      ],
+      "retrieval_correct": true,
+      "generation_correct": true
+    },
+    {
+      "question": "According to the Week 1 CoT vs ReAct comparison table, what is the typical failure mode of Chain-of-Thought reasoning?",
+      "answer": "According to the Week 1 CoT vs ReAct comparison table ([week1_logic_flow_diagram.pdf p.2]), the typical failure mode of Chain-of-Thought (CoT) reasoning is \"Hallucination mid-chain\".",
+      "sources_retrieved": [
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf",
+        "week3_tech_note.pdf"
+      ],
+      "expect_source": "week1_logic_flow_diagram.pdf",
+      "expect_keywords": [
+        "hallucination"
+      ],
+      "retrieval_correct": true,
+      "generation_correct": true
+    },
+    {
+      "question": "Does Chain-of-Thought reasoning use external tools, per the Week 1 comparison table?",
+      "answer": "According to [week1_logic_flow_diagram.pdf p.2], Chain-of-Thought (CoT) reasoning does not use external tools, as indicated by \"None \u2014 LLM only\" in the \"Tool Use\" row of the comparison table.",
+      "sources_retrieved": [
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf"
+      ],
+      "expect_source": "week1_logic_flow_diagram.pdf",
+      "expect_keywords": [
+        "none"
+      ],
+      "retrieval_correct": true,
+      "generation_correct": true
+    },
+    {
+      "question": "What does the Week 1 Key Insight box say ReAct equals?",
+      "answer": "The Week 1 Key Insight box says ReAct equals CoT (Chain-of-Thought) + Tool Use. \n(Source: [week1_logic_flow_diagram.pdf p.2])",
+      "sources_retrieved": [
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf",
+        "week1_logic_flow_diagram.pdf"
+      ],
+      "expect_source": "week1_logic_flow_diagram.pdf",
+      "expect_keywords": [
+        "cot",
+        "tool use"
+      ],
+      "retrieval_correct": true,
+      "generation_correct": true
+    }
+  ],
+  "retrieval_accuracy": 1.0,
+  "generation_accuracy": 1.0
+}

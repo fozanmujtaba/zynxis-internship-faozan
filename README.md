@@ -12,9 +12,9 @@
 |------|-------|--------|
 | 1 | Prompt Engineering & ReAct | ✅ Complete |
 | 2 | Tool Use & Function Calling | ✅ Complete |
-| 3 | Memory & State Management | 🔄 In Progress |
-| 4 | RAG for Agents | ⏳ Upcoming |
-| 5 | Multi-Agent Orchestration | ⏳ Upcoming |
+| 3 | Memory & State Management | ✅ Complete |
+| 4 | RAG for Agents | ✅ Complete |
+| 5 | Multi-Agent Orchestration | 🔄 In Progress |
 | 6 | Agentic Cybersecurity | ⏳ Upcoming |
 | 7 | Autonomous Business Logic | ⏳ Upcoming |
 | 8 | Capstone: Agentic Pipeline | ⏳ Upcoming |
