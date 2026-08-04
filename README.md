@@ -14,8 +14,8 @@
 | 2 | Tool Use & Function Calling | ✅ Complete |
 | 3 | Memory & State Management | ✅ Complete |
 | 4 | RAG for Agents | ✅ Complete |
-| 5 | Multi-Agent Orchestration | 🔄 In Progress |
-| 6 | Agentic Cybersecurity | ⏳ Upcoming |
+| 5 | Multi-Agent Orchestration | ✅ Complete |
+| 6 | Agentic Cybersecurity | ✅ Complete |
 | 7 | Autonomous Business Logic | ⏳ Upcoming |
 | 8 | Capstone: Agentic Pipeline | ⏳ Upcoming |
 

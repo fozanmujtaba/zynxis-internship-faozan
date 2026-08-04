@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<nmaprun scanner="nmap" args="nmap -sT -sV -p- -oX sample_vulnerable_scan.xml 192.168.56.101" start="0" version="7.95">
+  <host>
+    <status state="up" reason="syn-ack" />
+    <address addr="192.168.56.101" addrtype="ipv4" />
+    <hostnames>
+      <hostname name="metasploitable.local" type="PTR" />
+    </hostnames>
+    <ports>
+      <port protocol="tcp" portid="21">
+        <state state="open" reason="syn-ack" />
+        <service name="ftp" method="probed" conf="10" product="vsftpd" version="2.3.4" />
+      </port>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" />
+        <service name="ssh" method="probed" conf="10" product="OpenSSH" version="4.7p1 Debian 8ubuntu1" />
+      </port>
+      <port protocol="tcp" portid="23">
+        <state state="open" reason="syn-ack" />
+        <service name="telnet" method="probed" conf="10" product="Linux telnetd" />
+      </port>
+      <port protocol="tcp" portid="25">
+        <state state="open" reason="syn-ack" />
+        <service name="smtp" method="probed" conf="10" product="Postfix smtpd" />
+      </port>
+      <port protocol="tcp" portid="53">
+        <state state="open" reason="syn-ack" />
+        <service name="domain" method="probed" conf="10" product="ISC BIND" version="9.4.2" />
+      </port>
+      <port protocol="tcp" portid="80">
+        <state state="open" reason="syn-ack" />
+        <service name="http" method="probed" conf="10" product="Apache httpd" version="2.2.8" />
+      </port>
+      <port protocol="tcp" portid="111">
+        <state state="open" reason="syn-ack" />
+        <service name="rpcbind" method="probed" conf="10" version="2" />
+      </port>
+      <port protocol="tcp" portid="139">
+        <state state="open" reason="syn-ack" />
+        <service name="netbios-ssn" method="probed" conf="10" product="Samba smbd" version="3.X - 4.X" />
+      </port>
+      <port protocol="tcp" portid="445">
+        <state state="open" reason="syn-ack" />
+        <service name="netbios-ssn" method="probed" conf="10" product="Samba smbd" version="3.X - 4.X" />
+      </port>
+      <port protocol="tcp" portid="512">
+        <state state="open" reason="syn-ack" />
+        <service name="exec" method="probed" conf="10" product="netkit-rsh rexecd" />
+      </port>
+      <port protocol="tcp" portid="513">
+        <state state="open" reason="syn-ack" />
+        <service name="login" method="probed" conf="10" />
+      </port>
+      <port protocol="tcp" portid="514">
+        <state state="open" reason="syn-ack" />
+        <service name="shell" method="probed" conf="10" product="Netkit rshd" />
+      </port>
+      <port protocol="tcp" portid="1099">
+        <state state="open" reason="syn-ack" />
+        <service name="java-rmi" method="probed" conf="10" product="GNU Classpath grmiregistry" />
+      </port>
+      <port protocol="tcp" portid="1524">
+        <state state="open" reason="syn-ack" />
+        <service name="bindshell" method="probed" conf="10" product="Metasploitable root shell" />
+      </port>
+      <port protocol="tcp" portid="2049">
+        <state state="open" reason="syn-ack" />
+        <service name="nfs" method="probed" conf="10" version="2-4" />
+      </port>
+      <port protocol="tcp" portid="2121">
+        <state state="open" reason="syn-ack" />
+        <service name="ftp" method="probed" conf="10" product="ProFTPD" version="1.3.1" />
+      </port>
+      <port protocol="tcp" portid="3306">
+        <state state="open" reason="syn-ack" />
+        <service name="mysql" method="probed" conf="10" product="MySQL" version="5.0.51a-3ubuntu5" />
+      </port>
+      <port protocol="tcp" portid="5432">
+        <state state="open" reason="syn-ack" />
+        <service name="postgresql" method="probed" conf="10" product="PostgreSQL DB" version="8.3.0 - 8.3.7" />
+      </port>
+      <port protocol="tcp" portid="5900">
+        <state state="open" reason="syn-ack" />
+        <service name="vnc" method="probed" conf="10" product="VNC" version="protocol 3.3" />
+      </port>
+      <port protocol="tcp" portid="6000">
+        <state state="open" reason="syn-ack" />
+        <service name="X11" method="probed" conf="10" />
+      </port>
+      <port protocol="tcp" portid="6667">
+        <state state="open" reason="syn-ack" />
+        <service name="irc" method="probed" conf="10" product="UnrealIRCd" />
+      </port>
+      <port protocol="tcp" portid="8180">
+        <state state="open" reason="syn-ack" />
+        <service name="http" method="probed" conf="10" product="Apache Tomcat/Coyote JSP engine" version="1.1" />
+      </port>
+    </ports>
+  </host>
+  <runstats>
+    <finished time="0" elapsed="42.17" />
+  </runstats>
+</nmaprun>

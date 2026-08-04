@@ -1,0 +1,68 @@
+{
+  "scan": {
+    "scanned_at": "2026-08-04T11:36:24",
+    "nmap_args": "nmap -sT -sV -F -oX scan.xml scanme.nmap.org",
+    "elapsed": 28.77,
+    "host_count": 1,
+    "hosts": [
+      {
+        "addresses": [
+          "45.33.32.156"
+        ],
+        "hostnames": [
+          "scanme.nmap.org",
+          "scanme.nmap.org"
+        ],
+        "label": "scanme.nmap.org",
+        "open_ports": [
+          {
+            "port": 22,
+            "protocol": "tcp",
+            "state": "open",
+            "name": "ssh",
+            "product": "OpenSSH",
+            "version": "6.6.1p1 Ubuntu 2ubuntu2.13",
+            "extra": "Ubuntu Linux; protocol 2.0",
+            "scripts": []
+          },
+          {
+            "port": 80,
+            "protocol": "tcp",
+            "state": "open",
+            "name": "http",
+            "product": "Apache httpd",
+            "version": "2.4.7",
+            "extra": "(Ubuntu)",
+            "scripts": []
+          }
+        ]
+      }
+    ]
+  },
+  "findings": [
+    {
+      "severity": "high",
+      "title": "Outdated software: OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13",
+      "evidence": "22/tcp (ssh OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13)",
+      "rationale": "OpenSSH build predates 7.4; several user-enumeration and key-handling issues apply",
+      "host": "scanme.nmap.org",
+      "port": 22
+    },
+    {
+      "severity": "medium",
+      "title": "Outdated software: Apache httpd 2.4.7",
+      "evidence": "80/tcp (http Apache httpd 2.4.7)",
+      "rationale": "Apache httpd 2.4.x below 2.4.40 misses a long run of security fixes",
+      "host": "scanme.nmap.org",
+      "port": 80
+    },
+    {
+      "severity": "medium",
+      "title": "HTTP served without HTTPS",
+      "evidence": "80/tcp open, 443/tcp closed",
+      "rationale": "Traffic to this host has no TLS option, so sessions and credentials travel in the clear.",
+      "host": "scanme.nmap.org",
+      "port": 80
+    }
+  ]
+}
