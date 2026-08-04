@@ -98,13 +98,16 @@ python generate_report.py interaction_log.md interaction_log.pdf
 
 ## Results
 
-A full run is **21 agent turns in ~3 minutes**, yielding a **12-page market
-analysis report** on the global Agentic AI platforms market — one Phase 1
-brief plus ten Researcher → Writer handoffs.
+A full run is **21 agent turns in ~3 minutes** — one Phase 1 brief plus ten
+Researcher → Writer handoffs — yielding an **11-page, 8,475-word market
+analysis report** on the global Agentic AI platforms market.
 
-The committed run logged **19 turns in 147s** before exhausting the day's
-Groq token allowance on its final section; that section was regenerated
-separately with `--only 10` (see below).
+The committed run logged **19 turns in 147s** before exhausting the day's Groq
+token allowance on its final section. That section was regenerated the next
+day with `--only 10` against the cached brief, in 2 turns and 6 seconds
+instead of a second full run. The shipped report has all ten sections and no
+failure placeholders; `interaction_log.*` covers the 19-turn main run and
+`interaction_log_repair.*` covers the 2-turn repair.
 
 | Deliverable | File |
 |---|---|
@@ -151,6 +154,7 @@ Week_5/
 ├── market_analysis.md/.pdf     # deliverable: the generated report
 ├── interaction_log.md/.pdf     # deliverable: readable agent handoff log
 ├── interaction_log.json        # structured log (per-turn timing + full output)
+├── interaction_log_repair.*    # logs from the --only 10 repair run
 ├── crew_verbose.log            # raw CrewAI stdout
 ├── research_brief.md           # cached Phase 1 brief (reused by --only)
 ├── .env                        # GROQ_API_KEY
