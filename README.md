@@ -16,8 +16,8 @@
 | 4 | RAG for Agents | ✅ Complete |
 | 5 | Multi-Agent Orchestration | ✅ Complete |
 | 6 | Agentic Cybersecurity | ✅ Complete |
-| 7 | Autonomous Business Logic | ⏳ Upcoming |
-| 8 | Capstone: Agentic Pipeline | ⏳ Upcoming |
+| 7 | Autonomous Business Logic | ✅ Complete |
+| 8 | Capstone: Agentic Pipeline | 🔄 In Progress |
 
 ---
 

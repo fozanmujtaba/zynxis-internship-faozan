@@ -1,0 +1,1005 @@
+{
+  "analysis": {
+    "project_name": "Kesho Chama App",
+    "summary": "Kesho is building a digital savings app for informal-sector workers in Kenya, allowing groups to manage their chamas digitally. The app will track contributions, predict defaults, and provide a reputation system. The target users are market traders, boda riders, and others who earn daily in cash and have limited banking relationships.",
+    "objectives": [
+      "Provide a reliable and secure digital platform for informal savings groups",
+      "Reduce disputes and increase trust among group members",
+      "Comply with relevant regulatory requirements"
+    ],
+    "in_scope": [
+      "Development of a mobile app for Android devices",
+      "Integration with M-Pesa for money transactions",
+      "Contribution tracking and payout management",
+      "Group admin features for monitoring and chasing late payments",
+      "Reputation system for members",
+      "Support for English and Swahili languages"
+    ],
+    "out_of_scope": [
+      "Banking or financial services beyond digital chama management",
+      "Hardware or infrastructure provision for users",
+      "Comprehensive user training or support programs"
+    ],
+    "open_questions": [
+      {
+        "question": "What is the expected average group size and number of groups to be supported by the app?",
+        "why_it_matters": "Scalability and performance requirements will depend on the number of users and groups",
+        "assumption": "Assuming an average group size of 10-20 members and 100-500 groups initially"
+      },
+      {
+        "question": "How will the app handle cases where a member disputes a transaction or contribution record?",
+        "why_it_matters": "Dispute resolution processes will impact the app's functionality and user trust",
+        "assumption": "Assuming a basic dispute resolution process will be implemented, with potential for escalation to group admins or external authorities"
+      },
+      {
+        "question": "What specific regulatory requirements or guidelines from the Central Bank of Kenya (CBK) need to be complied with?",
+        "why_it_matters": "Non-compliance with regulatory requirements could result in legal or financial penalties",
+        "assumption": "Assuming compliance with general guidelines for non-banking financial services, but requiring further clarification from the client"
+      },
+      {
+        "question": "How will the AI-powered default prediction feature be trained and validated, and what data will be used for this purpose?",
+        "why_it_matters": "The accuracy and effectiveness of the default prediction feature will depend on the quality and relevance of the training data",
+        "assumption": "Assuming that historical contribution data will be used for training, but requiring further discussion with the client on data availability and quality"
+      },
+      {
+        "question": "What is the expected timeline for the seed round, and what are the key milestones or deliverables required before then?",
+        "why_it_matters": "The project timeline and milestones will impact the development schedule and resource allocation",
+        "assumption": "Assuming a four-month timeline with key milestones including alpha and beta releases, but requiring further clarification from the client"
+      }
+    ],
+    "risks": [
+      {
+        "risk": "Non-compliance with regulatory requirements",
+        "severity": "high",
+        "mitigation": "Close collaboration with the client to understand regulatory requirements, and engagement with relevant experts or authorities as needed"
+      },
+      {
+        "risk": "Technical difficulties with M-Pesa integration",
+        "severity": "medium",
+        "mitigation": "Early engagement with M-Pesa technical teams, and thorough testing of integration components"
+      }
+    ],
+    "complexity": "medium"
+  },
+  "breakdown": {
+    "epics": [
+      {
+        "id": "E1",
+        "name": "Discovery and Planning",
+        "goal": "Define project scope, timeline, and technical requirements"
+      },
+      {
+        "id": "E2",
+        "name": "Design",
+        "goal": "Create user interface and user experience designs for the mobile app"
+      },
+      {
+        "id": "E3",
+        "name": "Mobile App Development",
+        "goal": "Build the mobile app for Android devices"
+      },
+      {
+        "id": "E4",
+        "name": "Integration with M-Pesa",
+        "goal": "Integrate the app with M-Pesa for money transactions"
+      },
+      {
+        "id": "E5",
+        "name": "Testing and Quality Assurance",
+        "goal": "Ensure the app meets the required quality and functionality standards"
+      },
+      {
+        "id": "E6",
+        "name": "Security and Compliance",
+        "goal": "Ensure the app meets security and compliance requirements"
+      },
+      {
+        "id": "E7",
+        "name": "Deployment and Launch",
+        "goal": "Deploy the app and launch it to the public"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "T1",
+        "epic": "E1",
+        "title": "Conduct stakeholder interviews",
+        "detail": "Gather requirements from stakeholders to inform the project scope",
+        "role": "Product Manager",
+        "estimate_days": 2.0,
+        "depends_on": []
+      },
+      {
+        "id": "T2",
+        "epic": "E1",
+        "title": "Define project scope and timeline",
+        "detail": "Create a project plan and timeline based on stakeholder input",
+        "role": "Product Manager",
+        "estimate_days": 3.0,
+        "depends_on": [
+          "T1"
+        ]
+      },
+      {
+        "id": "T3",
+        "epic": "E2",
+        "title": "Create wireframes and prototypes",
+        "detail": "Design the user interface and user experience for the mobile app",
+        "role": "UX Designer",
+        "estimate_days": 5.0,
+        "depends_on": [
+          "T2"
+        ]
+      },
+      {
+        "id": "T4",
+        "epic": "E2",
+        "title": "Design the visual identity",
+        "detail": "Create a visual design concept for the app",
+        "role": "UX Designer",
+        "estimate_days": 3.0,
+        "depends_on": [
+          "T3"
+        ]
+      },
+      {
+        "id": "T5",
+        "epic": "E3",
+        "title": "Build the mobile app framework",
+        "detail": "Create the basic structure and architecture for the mobile app",
+        "role": "Mobile Engineer",
+        "estimate_days": 5.0,
+        "depends_on": [
+          "T4"
+        ]
+      },
+      {
+        "id": "T6",
+        "epic": "E3",
+        "title": "Implement contribution tracking",
+        "detail": "Develop the feature to track contributions and payouts",
+        "role": "Mobile Engineer",
+        "estimate_days": 4.0,
+        "depends_on": [
+          "T5"
+        ]
+      },
+      {
+        "id": "T7",
+        "epic": "E3",
+        "title": "Implement group admin features",
+        "detail": "Develop the features for group admins to monitor and manage groups",
+        "role": "Mobile Engineer",
+        "estimate_days": 4.0,
+        "depends_on": [
+          "T6"
+        ]
+      },
+      {
+        "id": "T8",
+        "epic": "E3",
+        "title": "Implement reputation system",
+        "detail": "Develop the feature to track and display member reputation",
+        "role": "Mobile Engineer",
+        "estimate_days": 3.0,
+        "depends_on": [
+          "T7"
+        ]
+      },
+      {
+        "id": "T9",
+        "epic": "E4",
+        "title": "Integrate with M-Pesa API",
+        "detail": "Connect the app to the M-Pesa API for money transactions",
+        "role": "Backend Engineer",
+        "estimate_days": 5.0,
+        "depends_on": [
+          "T8"
+        ]
+      },
+      {
+        "id": "T10",
+        "epic": "E4",
+        "title": "Implement transaction handling",
+        "detail": "Develop the feature to handle transactions and updates to member balances",
+        "role": "Backend Engineer",
+        "estimate_days": 4.0,
+        "depends_on": [
+          "T9"
+        ]
+      },
+      {
+        "id": "T11",
+        "epic": "E5",
+        "title": "Develop unit tests",
+        "detail": "Create unit tests for the mobile app",
+        "role": "Mobile Engineer",
+        "estimate_days": 3.0,
+        "depends_on": [
+          "T10"
+        ]
+      },
+      {
+        "id": "T12",
+        "epic": "E5",
+        "title": "Develop integration tests",
+        "detail": "Create integration tests for the mobile app",
+        "role": "Mobile Engineer",
+        "estimate_days": 3.0,
+        "depends_on": [
+          "T11"
+        ]
+      },
+      {
+        "id": "T13",
+        "epic": "E5",
+        "title": "Conduct manual testing",
+        "detail": "Test the app manually to identify defects",
+        "role": "QA Engineer",
+        "estimate_days": 4.0,
+        "depends_on": [
+          "T12"
+        ]
+      },
+      {
+        "id": "T14",
+        "epic": "E6",
+        "title": "Conduct security audit",
+        "detail": "Identify potential security vulnerabilities in the app",
+        "role": "Security Engineer",
+        "estimate_days": 3.0,
+        "depends_on": [
+          "T13"
+        ]
+      },
+      {
+        "id": "T15",
+        "epic": "E6",
+        "title": "Implement security measures",
+        "detail": "Develop and implement security measures to protect user data",
+        "role": "Security Engineer",
+        "estimate_days": 4.0,
+        "depends_on": [
+          "T14"
+        ]
+      },
+      {
+        "id": "T16",
+        "epic": "E6",
+        "title": "Ensure compliance with regulations",
+        "detail": "Verify that the app meets regulatory requirements",
+        "role": "Security Engineer",
+        "estimate_days": 2.0,
+        "depends_on": [
+          "T15"
+        ]
+      },
+      {
+        "id": "T17",
+        "epic": "E7",
+        "title": "Prepare for deployment",
+        "detail": "Configure the app for deployment to the app store",
+        "role": "DevOps Engineer",
+        "estimate_days": 2.0,
+        "depends_on": [
+          "T16"
+        ]
+      },
+      {
+        "id": "T18",
+        "epic": "E7",
+        "title": "Deploy the app",
+        "detail": "Deploy the app to the app store",
+        "role": "DevOps Engineer",
+        "estimate_days": 1.0,
+        "depends_on": [
+          "T17"
+        ]
+      },
+      {
+        "id": "T19",
+        "epic": "E7",
+        "title": "Launch the app",
+        "detail": "Make the app available to the public",
+        "role": "Product Manager",
+        "estimate_days": 2.0,
+        "depends_on": [
+          "T18"
+        ]
+      },
+      {
+        "id": "T20",
+        "epic": "E3",
+        "title": "Implement language support",
+        "detail": "Develop the feature to support English and Swahili languages",
+        "role": "Mobile Engineer",
+        "estimate_days": 2.0,
+        "depends_on": [
+          "T8"
+        ]
+      },
+      {
+        "id": "T21",
+        "epic": "E5",
+        "title": "Test language support",
+        "detail": "Test the language support feature",
+        "role": "QA Engineer",
+        "estimate_days": 1.0,
+        "depends_on": [
+          "T20"
+        ]
+      },
+      {
+        "id": "T22",
+        "epic": "E1",
+        "title": "Define dispute resolution process",
+        "detail": "Create a process for resolving disputes between group members",
+        "role": "Product Manager",
+        "estimate_days": 2.0,
+        "depends_on": [
+          "T1"
+        ]
+      },
+      {
+        "id": "T23",
+        "epic": "E3",
+        "title": "Implement dispute resolution feature",
+        "detail": "Develop the feature to support dispute resolution",
+        "role": "Mobile Engineer",
+        "estimate_days": 3.0,
+        "depends_on": [
+          "T22"
+        ]
+      },
+      {
+        "id": "T24",
+        "epic": "E5",
+        "title": "Test dispute resolution feature",
+        "detail": "Test the dispute resolution feature",
+        "role": "QA Engineer",
+        "estimate_days": 1.0,
+        "depends_on": [
+          "T23"
+        ]
+      },
+      {
+        "id": "T25",
+        "epic": "E6",
+        "title": "Conduct data protection impact assessment",
+        "detail": "Assess the impact of the app on user data protection",
+        "role": "Security Engineer",
+        "estimate_days": 2.0,
+        "depends_on": [
+          "T14"
+        ]
+      },
+      {
+        "id": "T26",
+        "epic": "E6",
+        "title": "Implement data protection measures",
+        "detail": "Develop and implement measures to protect user data",
+        "role": "Security Engineer",
+        "estimate_days": 3.0,
+        "depends_on": [
+          "T25"
+        ]
+      },
+      {
+        "id": "T27",
+        "epic": "E7",
+        "title": "Prepare marketing materials",
+        "detail": "Create marketing materials for the app launch",
+        "role": "Product Manager",
+        "estimate_days": 2.0,
+        "depends_on": [
+          "T19"
+        ]
+      },
+      {
+        "id": "T28",
+        "epic": "E7",
+        "title": "Coordinate app launch",
+        "detail": "Coordinate the app launch with stakeholders",
+        "role": "Product Manager",
+        "estimate_days": 1.0,
+        "depends_on": [
+          "T27"
+        ]
+      },
+      {
+        "id": "T29",
+        "epic": "E5",
+        "title": "Conduct alpha testing",
+        "detail": "Test the app with a small group of users",
+        "role": "QA Engineer",
+        "estimate_days": 2.0,
+        "depends_on": [
+          "T13"
+        ]
+      },
+      {
+        "id": "T30",
+        "epic": "E5",
+        "title": "Conduct beta testing",
+        "detail": "Test the app with a larger group of users",
+        "role": "QA Engineer",
+        "estimate_days": 3.0,
+        "depends_on": [
+          "T29"
+        ]
+      }
+    ]
+  },
+  "tech_stack": {
+    "recommendations": [
+      {
+        "layer": "Frontend",
+        "choice": "React Native",
+        "rationale": "Cross-platform compatibility, large community support, and ease of development for Android devices, which is the primary target for this project",
+        "alternative": "Flutter",
+        "why_not_alternative": "While Flutter is a strong alternative, React Native's larger community and more extensive library support make it a better fit for this project's medium complexity and the need for rapid development"
+      },
+      {
+        "layer": "Backend",
+        "choice": "Node.js with Express.js",
+        "rationale": "Well-established framework for building scalable and secure server-side applications, with extensive support for integrating with third-party services like M-Pesa",
+        "alternative": "Django",
+        "why_not_alternative": "Django, while robust, has a steeper learning curve and is more opinionated, which could slow down development for a small team"
+      },
+      {
+        "layer": "Database",
+        "choice": "PostgreSQL",
+        "rationale": "Reliable, scalable, and feature-rich open-source database that supports complex queries and has strong support for transactions, necessary for managing financial data",
+        "alternative": "MySQL",
+        "why_not_alternative": "PostgreSQL offers better support for advanced data types and querying capabilities, making it more suitable for the financial tracking and prediction aspects of the app"
+      },
+      {
+        "layer": "Hosting",
+        "choice": "AWS",
+        "rationale": "Comprehensive set of services that can support the application's needs, from compute and storage to database and security, with a strong presence in Africa for low latency",
+        "alternative": "Google Cloud Platform (GCP)",
+        "why_not_alternative": "AWS has a more established presence in Africa and offers more competitive pricing for small to medium-sized projects, making it a better fit for this startup"
+      },
+      {
+        "layer": "Auth",
+        "choice": "OAuth 2.0 with Okta",
+        "rationale": "Secure, scalable, and widely adopted authorization framework that can handle the app's authentication needs, including support for M-Pesa integration",
+        "alternative": "Auth0",
+        "why_not_alternative": "Okta offers more comprehensive features for identity and access management, particularly for enterprise and financial applications, making it a better choice for compliance and security"
+      },
+      {
+        "layer": "CI/CD",
+        "choice": "Jenkins",
+        "rationale": "Mature, open-source automation server that supports a wide range of development lifecycles, including build, test, and deployment, with a large community for support",
+        "alternative": "GitLab CI/CD",
+        "why_not_alternative": "Jenkins offers more flexibility and customization options, which are beneficial for integrating with the diverse set of tools and services used in this project"
+      },
+      {
+        "layer": "Monitoring",
+        "choice": "Prometheus and Grafana",
+        "rationale": "Prometheus provides robust monitoring and alerting capabilities, while Grafana offers flexible and customizable dashboards for visualizing application performance and health",
+        "alternative": "New Relic",
+        "why_not_alternative": "The combination of Prometheus and Grafana offers more cost-effective and customizable monitoring solutions, which are crucial for a startup's budget and specific needs"
+      },
+      {
+        "layer": "M-Pesa Integration",
+        "choice": "Daraja API by Safaricom",
+        "rationale": "Official API provided by Safaricom for integrating M-Pesa services into applications, ensuring compliance and reliability for financial transactions",
+        "alternative": "Third-party M-Pesa SDKs",
+        "why_not_alternative": "Using the official Daraja API ensures direct support from Safaricom and compliance with regulatory requirements, reducing the risk of integration issues or service disruptions"
+      }
+    ],
+    "architecture_notes": [
+      "The React Native frontend will communicate with the Node.js backend via RESTful APIs, secured with OAuth 2.0 and Okta for authentication.",
+      "The backend will utilize PostgreSQL for database operations, ensuring data integrity and scalability.",
+      "M-Pesa integration will be handled through the Daraja API, facilitating secure and compliant financial transactions.",
+      "Monitoring will be achieved through Prometheus and Grafana, providing real-time insights into application performance and health."
+    ],
+    "scaling_considerations": [
+      "As usage grows, the database (PostgreSQL) will likely be the first component to require scaling, which can be addressed by upgrading to more powerful instances or implementing sharding.",
+      "The Node.js backend may also require additional instances or more efficient routing to handle increased traffic, which can be managed through AWS auto-scaling features.",
+      "To mitigate the risk of non-compliance with regulatory requirements, regular audits and compliance checks will be necessary, potentially involving third-party services for support."
+    ]
+  },
+  "repairs": [],
+  "summary": {
+    "task_count": 30,
+    "start": "2026-09-01",
+    "end": "2026-12-03",
+    "duration_working_days": 67,
+    "duration_weeks": 13.4,
+    "total_effort_days": 84.0,
+    "critical_task_count": 26,
+    "headcount": 8,
+    "effort_by_role": {
+      "Backend Engineer": 9.0,
+      "DevOps Engineer": 3.0,
+      "Mobile Engineer": 27.0,
+      "Product Manager": 12.0,
+      "QA Engineer": 11.0,
+      "Security Engineer": 14.0,
+      "UX Designer": 8.0
+    },
+    "parallelism": 1.25
+  },
+  "tasks": [
+    {
+      "id": "T1",
+      "epic": "E1",
+      "title": "Conduct stakeholder interviews",
+      "detail": "Gather requirements from stakeholders to inform the project scope",
+      "role": "Product Manager",
+      "estimate_days": 2.0,
+      "depends_on": [],
+      "resource_pred": null,
+      "start": "2026-09-01",
+      "end": "2026-09-03",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T2",
+      "epic": "E1",
+      "title": "Define project scope and timeline",
+      "detail": "Create a project plan and timeline based on stakeholder input",
+      "role": "Product Manager",
+      "estimate_days": 3.0,
+      "depends_on": [
+        "T1"
+      ],
+      "resource_pred": null,
+      "start": "2026-09-03",
+      "end": "2026-09-08",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T3",
+      "epic": "E2",
+      "title": "Create wireframes and prototypes",
+      "detail": "Design the user interface and user experience for the mobile app",
+      "role": "UX Designer",
+      "estimate_days": 5.0,
+      "depends_on": [
+        "T2"
+      ],
+      "resource_pred": null,
+      "start": "2026-09-08",
+      "end": "2026-09-15",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T4",
+      "epic": "E2",
+      "title": "Design the visual identity",
+      "detail": "Create a visual design concept for the app",
+      "role": "UX Designer",
+      "estimate_days": 3.0,
+      "depends_on": [
+        "T3"
+      ],
+      "resource_pred": null,
+      "start": "2026-09-15",
+      "end": "2026-09-18",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T5",
+      "epic": "E3",
+      "title": "Build the mobile app framework",
+      "detail": "Create the basic structure and architecture for the mobile app",
+      "role": "Mobile Engineer",
+      "estimate_days": 5.0,
+      "depends_on": [
+        "T4"
+      ],
+      "resource_pred": null,
+      "start": "2026-09-18",
+      "end": "2026-09-25",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T6",
+      "epic": "E3",
+      "title": "Implement contribution tracking",
+      "detail": "Develop the feature to track contributions and payouts",
+      "role": "Mobile Engineer",
+      "estimate_days": 4.0,
+      "depends_on": [
+        "T5"
+      ],
+      "resource_pred": null,
+      "start": "2026-09-25",
+      "end": "2026-10-01",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T7",
+      "epic": "E3",
+      "title": "Implement group admin features",
+      "detail": "Develop the features for group admins to monitor and manage groups",
+      "role": "Mobile Engineer",
+      "estimate_days": 4.0,
+      "depends_on": [
+        "T6"
+      ],
+      "resource_pred": null,
+      "start": "2026-10-01",
+      "end": "2026-10-07",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T8",
+      "epic": "E3",
+      "title": "Implement reputation system",
+      "detail": "Develop the feature to track and display member reputation",
+      "role": "Mobile Engineer",
+      "estimate_days": 3.0,
+      "depends_on": [
+        "T7"
+      ],
+      "resource_pred": null,
+      "start": "2026-10-07",
+      "end": "2026-10-12",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T9",
+      "epic": "E4",
+      "title": "Integrate with M-Pesa API",
+      "detail": "Connect the app to the M-Pesa API for money transactions",
+      "role": "Backend Engineer",
+      "estimate_days": 5.0,
+      "depends_on": [
+        "T8"
+      ],
+      "resource_pred": null,
+      "start": "2026-10-12",
+      "end": "2026-10-19",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T10",
+      "epic": "E4",
+      "title": "Implement transaction handling",
+      "detail": "Develop the feature to handle transactions and updates to member balances",
+      "role": "Backend Engineer",
+      "estimate_days": 4.0,
+      "depends_on": [
+        "T9"
+      ],
+      "resource_pred": null,
+      "start": "2026-10-19",
+      "end": "2026-10-23",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T11",
+      "epic": "E5",
+      "title": "Develop unit tests",
+      "detail": "Create unit tests for the mobile app",
+      "role": "Mobile Engineer",
+      "estimate_days": 3.0,
+      "depends_on": [
+        "T10"
+      ],
+      "resource_pred": null,
+      "start": "2026-10-23",
+      "end": "2026-10-28",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T12",
+      "epic": "E5",
+      "title": "Develop integration tests",
+      "detail": "Create integration tests for the mobile app",
+      "role": "Mobile Engineer",
+      "estimate_days": 3.0,
+      "depends_on": [
+        "T11"
+      ],
+      "resource_pred": null,
+      "start": "2026-10-28",
+      "end": "2026-11-02",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T13",
+      "epic": "E5",
+      "title": "Conduct manual testing",
+      "detail": "Test the app manually to identify defects",
+      "role": "QA Engineer",
+      "estimate_days": 4.0,
+      "depends_on": [
+        "T12"
+      ],
+      "resource_pred": null,
+      "start": "2026-11-02",
+      "end": "2026-11-06",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T14",
+      "epic": "E6",
+      "title": "Conduct security audit",
+      "detail": "Identify potential security vulnerabilities in the app",
+      "role": "Security Engineer",
+      "estimate_days": 3.0,
+      "depends_on": [
+        "T13"
+      ],
+      "resource_pred": null,
+      "start": "2026-11-06",
+      "end": "2026-11-11",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T15",
+      "epic": "E6",
+      "title": "Implement security measures",
+      "detail": "Develop and implement security measures to protect user data",
+      "role": "Security Engineer",
+      "estimate_days": 4.0,
+      "depends_on": [
+        "T14"
+      ],
+      "resource_pred": null,
+      "start": "2026-11-11",
+      "end": "2026-11-17",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T16",
+      "epic": "E6",
+      "title": "Ensure compliance with regulations",
+      "detail": "Verify that the app meets regulatory requirements",
+      "role": "Security Engineer",
+      "estimate_days": 2.0,
+      "depends_on": [
+        "T15"
+      ],
+      "resource_pred": "T25",
+      "start": "2026-11-19",
+      "end": "2026-11-23",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T17",
+      "epic": "E7",
+      "title": "Prepare for deployment",
+      "detail": "Configure the app for deployment to the app store",
+      "role": "DevOps Engineer",
+      "estimate_days": 2.0,
+      "depends_on": [
+        "T16"
+      ],
+      "resource_pred": null,
+      "start": "2026-11-23",
+      "end": "2026-11-25",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T18",
+      "epic": "E7",
+      "title": "Deploy the app",
+      "detail": "Deploy the app to the app store",
+      "role": "DevOps Engineer",
+      "estimate_days": 1.0,
+      "depends_on": [
+        "T17"
+      ],
+      "resource_pred": null,
+      "start": "2026-11-25",
+      "end": "2026-11-26",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T19",
+      "epic": "E7",
+      "title": "Launch the app",
+      "detail": "Make the app available to the public",
+      "role": "Product Manager",
+      "estimate_days": 2.0,
+      "depends_on": [
+        "T18"
+      ],
+      "resource_pred": null,
+      "start": "2026-11-26",
+      "end": "2026-11-30",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T20",
+      "epic": "E3",
+      "title": "Implement language support",
+      "detail": "Develop the feature to support English and Swahili languages",
+      "role": "Mobile Engineer",
+      "estimate_days": 2.0,
+      "depends_on": [
+        "T8"
+      ],
+      "resource_pred": null,
+      "start": "2026-10-12",
+      "end": "2026-10-14",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T21",
+      "epic": "E5",
+      "title": "Test language support",
+      "detail": "Test the language support feature",
+      "role": "QA Engineer",
+      "estimate_days": 1.0,
+      "depends_on": [
+        "T20"
+      ],
+      "resource_pred": null,
+      "start": "2026-10-14",
+      "end": "2026-10-15",
+      "slack_days": 35,
+      "critical": false
+    },
+    {
+      "id": "T22",
+      "epic": "E1",
+      "title": "Define dispute resolution process",
+      "detail": "Create a process for resolving disputes between group members",
+      "role": "Product Manager",
+      "estimate_days": 2.0,
+      "depends_on": [
+        "T1"
+      ],
+      "resource_pred": "T2",
+      "start": "2026-09-08",
+      "end": "2026-09-10",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T23",
+      "epic": "E3",
+      "title": "Implement dispute resolution feature",
+      "detail": "Develop the feature to support dispute resolution",
+      "role": "Mobile Engineer",
+      "estimate_days": 3.0,
+      "depends_on": [
+        "T22"
+      ],
+      "resource_pred": null,
+      "start": "2026-09-10",
+      "end": "2026-09-15",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T24",
+      "epic": "E5",
+      "title": "Test dispute resolution feature",
+      "detail": "Test the dispute resolution feature",
+      "role": "QA Engineer",
+      "estimate_days": 1.0,
+      "depends_on": [
+        "T23"
+      ],
+      "resource_pred": null,
+      "start": "2026-09-15",
+      "end": "2026-09-16",
+      "slack_days": 56,
+      "critical": false
+    },
+    {
+      "id": "T25",
+      "epic": "E6",
+      "title": "Conduct data protection impact assessment",
+      "detail": "Assess the impact of the app on user data protection",
+      "role": "Security Engineer",
+      "estimate_days": 2.0,
+      "depends_on": [
+        "T14"
+      ],
+      "resource_pred": "T15",
+      "start": "2026-11-17",
+      "end": "2026-11-19",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T26",
+      "epic": "E6",
+      "title": "Implement data protection measures",
+      "detail": "Develop and implement measures to protect user data",
+      "role": "Security Engineer",
+      "estimate_days": 3.0,
+      "depends_on": [
+        "T25"
+      ],
+      "resource_pred": "T16",
+      "start": "2026-11-23",
+      "end": "2026-11-26",
+      "slack_days": 5,
+      "critical": false
+    },
+    {
+      "id": "T27",
+      "epic": "E7",
+      "title": "Prepare marketing materials",
+      "detail": "Create marketing materials for the app launch",
+      "role": "Product Manager",
+      "estimate_days": 2.0,
+      "depends_on": [
+        "T19"
+      ],
+      "resource_pred": null,
+      "start": "2026-11-30",
+      "end": "2026-12-02",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T28",
+      "epic": "E7",
+      "title": "Coordinate app launch",
+      "detail": "Coordinate the app launch with stakeholders",
+      "role": "Product Manager",
+      "estimate_days": 1.0,
+      "depends_on": [
+        "T27"
+      ],
+      "resource_pred": null,
+      "start": "2026-12-02",
+      "end": "2026-12-03",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T29",
+      "epic": "E5",
+      "title": "Conduct alpha testing",
+      "detail": "Test the app with a small group of users",
+      "role": "QA Engineer",
+      "estimate_days": 2.0,
+      "depends_on": [
+        "T13"
+      ],
+      "resource_pred": null,
+      "start": "2026-11-06",
+      "end": "2026-11-10",
+      "slack_days": 0,
+      "critical": true
+    },
+    {
+      "id": "T30",
+      "epic": "E5",
+      "title": "Conduct beta testing",
+      "detail": "Test the app with a larger group of users",
+      "role": "QA Engineer",
+      "estimate_days": 3.0,
+      "depends_on": [
+        "T29"
+      ],
+      "resource_pred": null,
+      "start": "2026-11-10",
+      "end": "2026-11-13",
+      "slack_days": 14,
+      "critical": false
+    }
+  ]
+}
