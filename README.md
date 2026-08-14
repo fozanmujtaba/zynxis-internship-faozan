@@ -17,7 +17,7 @@
 | 5 | Multi-Agent Orchestration | ✅ Complete |
 | 6 | Agentic Cybersecurity | ✅ Complete |
 | 7 | Autonomous Business Logic | ✅ Complete |
-| 8 | Capstone: Agentic Pipeline | 🔄 In Progress |
+| 8 | Capstone: Agentic Pipeline | ✅ Complete |
 
 ---
 

@@ -7,3 +7,4 @@ venv/
 .venv/
 *.egg-info/
 chroma_store/
+.audit_cache/
