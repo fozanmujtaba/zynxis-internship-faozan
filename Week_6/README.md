@@ -94,6 +94,19 @@ MEDIUM   Outdated software: Apache httpd 2.4.7 scanme.nmap.org:80
 MEDIUM   HTTP served without HTTPS             scanme.nmap.org:80
 ```
 
+**Live results vary between runs.** `scanme.nmap.org` is a shared public host
+that rate-limits, and port 22 frequently comes back as `tcpwrapped` — meaning
+nmap confirmed something is listening but could not coax a version banner out
+of it. When that happens the OpenSSH finding does not fire and the scan
+reports two findings rather than three, as in
+[screenshots/01-live-scan.png](screenshots/01-live-scan.png).
+
+That is the correct behaviour, and it illustrates the limitation noted below:
+this agent reasons entirely from what the banner reveals, so a service that
+declines to identify itself is invisible to version-based triage.
+`sample_scan.xml` preserves a run where the banner *was* readable, so the
+three-finding result stays reproducible offline.
+
 **2. Synthetic fixture — `sample_vulnerable_scan.xml`** ([security_report.pdf](security_report.pdf))
 
 A well-maintained host exercises almost none of the rules, so
